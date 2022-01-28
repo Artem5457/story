@@ -6,13 +6,12 @@
 </form>
 
 <ul>
-  <li *ngFor="let item of outItems">
+  <li *ngFor="let item of outItems$ | async">
     <span>Name: {{ item.name }} |</span>
     <span>Age: {{ item.age }} |</span>
     <span>Color: {{ item.colour }} |</span>
     <button (click)="itemToUpdate(item)">To Update</button>
     <hr>
-
   </li>
 
   <form (ngSubmit)="updateItem()">
